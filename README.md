@@ -10,6 +10,12 @@ Run locally:
 npm i && node start
 ```
 
+Pass Tracker Token:
+
+```
+/user?token=TOKEN
+```
+
 ## TODO
 
 ### Phase 1
