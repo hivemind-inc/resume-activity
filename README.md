@@ -23,6 +23,7 @@ Tracker user activity panel.
 - [ ] router to accept token via URL
     - https://github.com/rackt/react-router
     - won't recongnize anything but the top level route
+    - hack solution that regex's the token as a param from URL
 
 ### Phase 5
 
