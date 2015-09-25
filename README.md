@@ -23,7 +23,7 @@ Tracker user activity panel.
 ### Phase 4
 
 - [ ] router to accept token via URL
-    - [](https://github.com/rackt/react-router)
+    - https://github.com/rackt/react-router
 
 ### Phase 5
 
