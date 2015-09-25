@@ -12,7 +12,7 @@ Tracker user activity panel.
 
 ### Phase 2
 
-- [ ] List of projects (name)
+- [x] List of projects (name)
 
 ### Phase 3
 
