@@ -16,9 +16,7 @@ Tracker user activity panel.
 
 ### Phase 3
 
-- [ ] stories state change (e.g. delivered)
-- [ ] stories commented on
-- [ ] stories commented at
+- [x] recent activity
 
 ### Phase 4
 
@@ -27,6 +25,8 @@ Tracker user activity panel.
 
 ### Phase 5
 
+- [ ] gravatar via email
+- [ ] styling polish
 - [ ] deploy to PWS
 
 ### Phase 6

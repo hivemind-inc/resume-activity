@@ -1,51 +1,71 @@
 import React from 'react';
 
-// components //
+// components
 import User from '../components/User';
+import UserActivities from '../components/UserActivities';
 import Projects from '../components/Projects';
 
 var request = require('superagent');
 
 var Root = React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return {
-      username: '',
-      name: '',
-      createdAt: '',
-      projects: []
+      user: {},
+      projects: [],
+      userActivities: []
     };
   },
 
   // this will eventually happen in middleware...
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.getUser_();
+    this.getUserActivities_();
   },
 
   render: function() {
     return (
       <div>
-        <User username={this.state.username} name={this.state.name} createdAt={this.state.createdAt} />
+        <User {...this.state.user} />
         <Projects projects={this.state.projects} />
+        <UserActivities userActivities={this.state.userActivities} />
       </div>
     );
   },
 
-  getUser_: function() {
+  getUser_: function () {
     request
       .get('https://www.pivotaltracker.com/services/v5/me')
-      .set('X-TrackerToken', '3bc8940ec7fb4643646b82e76e55597b')
+      .set('X-TrackerToken', '')
       .set('Accept', 'application/json')
       .end(function(err, res){
         if (this.isMounted()) {
 
           const parsedResponse = JSON.parse(res.text);
-          console.log('parsedResponse', parsedResponse);
 
           this.setState({
-            username: parsedResponse.username,
-            name: parsedResponse.name,
-            createdAt: parsedResponse.created_at,
-            projects: parsedResponse.projects
+            user: {
+              username:  parsedResponse.username,
+              name:      parsedResponse.name,
+              createdAt: parsedResponse.created_at
+            },
+            projects:  parsedResponse.projects
+          });
+        }
+      }.bind(this));
+  },
+
+  getUserActivities_: function () {
+    request
+      .get('https://www.pivotaltracker.com/services/v5/my/activity?limit=20')
+      .set('X-TrackerToken', '')
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        if (this.isMounted()) {
+
+          const parsedResponse = JSON.parse(res.text);
+
+          this.setState({
+            userActivities: parsedResponse
           });
         }
       }.bind(this));
