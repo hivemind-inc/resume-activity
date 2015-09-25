@@ -24,7 +24,6 @@ const Root = React.createClass({
   },
 
   render: function() {
-    console.log('this.props.params.token', this.props.params.token);
     return (
       <div>
         <User {...this.state.user} />

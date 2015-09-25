@@ -1,0 +1,5 @@
+---
+applications:
+- name: hacktivity
+  memory: 32M
+  command: node server.js

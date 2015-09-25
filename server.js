@@ -9,7 +9,7 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true
   }
-}).listen(3000, 'localhost', function (err) {
+}).listen(process.env.VCAP_APP_PORT || 3000, process.env.VCAP_APP_HOST || 'localhost', function (err) {
   if (err) {
     console.log(err);
   }
