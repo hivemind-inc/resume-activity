@@ -2,6 +2,14 @@
 
 Tracker user activity panel.
 
+## Usage
+
+Run locally:
+
+```
+npm i && node start
+```
+
 ## TODO
 
 ### Phase 1
@@ -28,6 +36,7 @@ Tracker user activity panel.
 ### Phase 5
 
 - [ ] deploy to PWS
+    - keeps crashing
 
 ### Phase 6
 
