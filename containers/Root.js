@@ -5,9 +5,10 @@ import User from '../components/User';
 import UserActivities from '../components/UserActivities';
 import Projects from '../components/Projects';
 
-var request = require('superagent');
+const request = require('superagent');
+const hackToken = window.location.href.match(/\?token=(.+)#/)[1];
 
-var Root = React.createClass({
+const Root = React.createClass({
   getInitialState: function () {
     return {
       user: {},
@@ -23,6 +24,7 @@ var Root = React.createClass({
   },
 
   render: function() {
+    console.log('this.props.params.token', this.props.params.token);
     return (
       <div>
         <User {...this.state.user} />
@@ -35,7 +37,7 @@ var Root = React.createClass({
   getUser_: function () {
     request
       .get('https://www.pivotaltracker.com/services/v5/me')
-      .set('X-TrackerToken', '')
+      .set('X-TrackerToken', hackToken)
       .set('Accept', 'application/json')
       .end(function(err, res){
         if (this.isMounted()) {
@@ -57,7 +59,7 @@ var Root = React.createClass({
   getUserActivities_: function () {
     request
       .get('https://www.pivotaltracker.com/services/v5/my/activity?limit=20')
-      .set('X-TrackerToken', '')
+      .set('X-TrackerToken', hackToken)
       .set('Accept', 'application/json')
       .end(function(err, res){
         if (this.isMounted()) {

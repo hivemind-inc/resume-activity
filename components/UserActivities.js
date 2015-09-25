@@ -2,7 +2,7 @@ import React from 'react';
 
 import UserActivity from './UserActivity'
 
-var UserActivities = React.createClass({
+const UserActivities = React.createClass({
   render: function() {
     return (
       <div>

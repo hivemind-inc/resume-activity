@@ -22,13 +22,16 @@ Tracker user activity panel.
 
 - [ ] router to accept token via URL
     - https://github.com/rackt/react-router
+    - won't recongnize anything but the top level route
 
 ### Phase 5
 
-- [ ] gravatar via email
-- [ ] styling polish
 - [ ] deploy to PWS
 
 ### Phase 6
 
-- [ ] redux / middleware
+- [ ] styling polish
+
+### Phase  7
+
+- [ ] convert to redux / middleware

@@ -1,6 +1,6 @@
 import React from 'react';
 
-var User = React.createClass({
+const User = React.createClass({
   render: function() {
     return (
       <div className='hk user'>

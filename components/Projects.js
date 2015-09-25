@@ -2,7 +2,7 @@ import React from 'react';
 
 import Project from './Project'
 
-var Projects = React.createClass({
+const Projects = React.createClass({
   render: function() {
     return (
       <div>
